@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+body {
+  color: rgb(var(--foreground-rgb));
+  background: white;
+}
+
+.tabs {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  align-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+.nav ul,
+.nav li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav ul {
+  display: flex;
+  gap: 10px;
+  margin-left: 28px;
+}
+.nav li {
+  height: 100%;
+  padding: 0 15px;
+  position: relative;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  width: 84px;
+}
+.nav .underline {
+  position: absolute;
+  bottom: -2.5px;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: #01875f;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.nav li.selected {
+  background: transparent;
+}
+.nav li button {
+  width: 20px;
+  height: 20px;
+  border: 0;
+  background: #fff;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  stroke: #000;
+  margin-left: 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.apk-large-image {
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+}
+
+.scroll::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+/*# sourceMappingURL=globals.css.map */

@@ -3,6 +3,7 @@ import Image from "next/image";
 import {useState} from "react";
 import {motion} from 'framer-motion'
 import {Icon} from "@iconify/react";
+import Link from "next/link";
 
 export const allIngredients = [
   {icon: "🍅", label: "Games"},
@@ -13,10 +14,12 @@ export default function Navbar() {
   const [selectedTab, setSelectedTab] = useState(allIngredients[0]);
 
   return <div className={'nav bg-white'}>
-    <div className={'flex space-x-2 items-center h-[64px] ml-[28px]'}>
-      <Image src={'/apps-store-logo.png'} alt={'apps store logo'} width={40} height={40} quality={100}/>
-      <div className={'text-2xl font-semibold text-gray2 mt-1 tracking-wide'}>Apk Store</div>
-    </div>
+    <Link href={'/'}>
+      <div className={'flex space-x-2 items-center h-[64px] ml-[28px] cursor-pointer'}>
+        <Image src={'/apk-store-logo.png'} alt={'apps store logo'} width={40} height={40} quality={100}/>
+        <div className={'text-2xl font-semibold text-gray2 mt-1 tracking-wide'}>Apk Store</div>
+      </div>
+    </Link>
     <ul>
       {allIngredients.map((item) => (
         <li

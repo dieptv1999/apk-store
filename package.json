@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "axios": "^1.6.2",
+    "date-fns": "^2.30.0",
     "formik": "^2.4.5",
     "framer-motion": "^10.16.16",
     "lodash": "^4.17.21",
