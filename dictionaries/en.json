@@ -1,0 +1,10 @@
+{
+  "navbar": {
+    "games": "Games",
+    "app": "App"
+  },
+  "home": {
+    "hotGame": "Hot Games",
+    "educational": "Educational"
+  }
+}

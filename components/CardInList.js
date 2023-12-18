@@ -4,10 +4,12 @@ import Card from "@/components/Card";
 import Image from "next/image";
 import {Icon} from "@iconify/react";
 import Link from "next/link";
+import useLocale from "@/hooks/useLocale";
 
 export default function CardInList({className, index, icon, title, genreId, score, key, appId}) {
+  const locale = useLocale();
   return (
-    <Link href={`/apps/${appId}`}>
+    <Link href={`/${locale}/apps/${appId}`}>
       <Card className={className} key={key}>
         <div className={'flex space-x-4 items-center'}>
           {index && <span>{index}</span>}

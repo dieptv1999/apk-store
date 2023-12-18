@@ -18,6 +18,7 @@ export default function ApkMoreInfo({apkInfo}) {
   const [imgIdx, setImgIdx] = useState(0);
   const [vsMore, setVsMore] = useState(false)
   const [similarApps, setSimilarApps] = useState([]);
+  const [similarDevApps, setSimilarDevApps] = useState([]);
 
   const fetchSimilarApp = useCallback(async () => {
     if (apkInfo?.genreId) {
@@ -33,8 +34,23 @@ export default function ApkMoreInfo({apkInfo}) {
     }
   }, [apkInfo]);
 
+  const fetchSimilarDevApp = useCallback(async () => {
+    if (apkInfo?.genreId) {
+      const res = await axios.post(BASE_URL + "/apk/similar/develop", {
+        developerId: apkInfo?.developerId,
+        appId: apkInfo?.appId,
+      })
+
+
+      if (res.status === 200) {
+        setSimilarDevApps(res.data)
+      }
+    }
+  }, [apkInfo]);
+
   useEffect(() => {
     fetchSimilarApp()
+    fetchSimilarDevApp()
   }, [apkInfo])
 
   const scrollToNextElement = () => {
@@ -177,6 +193,28 @@ export default function ApkMoreInfo({apkInfo}) {
           </>
         )}
       </Disclosure>
+      {similarDevApps && similarDevApps.length > 0
+        ? <Disclosure defaultOpen={true}>
+          {({open}) => (
+            <>
+              <Disclosure.Button
+                className="mb-2 flex w-full justify-between items-center rounded-lg bg-blue-100 px-4 py-2 text-left text-lg font-semibold text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500/75">
+                <span>Các mục khác của {apkInfo?.developerId}</span>
+                <Icon icon="fluent:chevron-up-12-filled"/>
+              </Disclosure.Button>
+              <Disclosure.Panel className="pb-2 pt-4 text-lg font-medium">
+                <div className={'flex flex-col space-y-2'}>
+
+                  {similarDevApps.map((apk, index) => (
+                    <CardInList {...apk} key={index} className={'p-2'}/>
+                  ))
+                  }
+                </div>
+              </Disclosure.Panel>
+            </>
+          )}
+        </Disclosure>
+        : null}
     </div>
   </div>
 }

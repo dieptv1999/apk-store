@@ -2,13 +2,18 @@
 import {Icon} from "@iconify/react";
 import Image from "next/image";
 import ShareComponent from "@/components/ShareComponent";
+import Link from "next/link";
+import useLocale from "@/hooks/useLocale";
 
 export default function ApkInfo({apkInfo}) {
+  const locale = useLocale()
   return <div className={'flex w-full my-4'}>
     <div className={'flex flex-col flex-1'}>
       <div className={'text-5xl font-bold'}>{apkInfo?.title}</div>
       <div className={'flex flex-col my-6'}>
-        <div className={'font-semibold text-primary'}>{apkInfo?.developerId}</div>
+        <Link href={`/${locale}/developer?id=` + apkInfo?.developerId}>
+          <div className={'font-semibold text-primary'}>{apkInfo?.developerId}</div>
+        </Link>
         <div className={'text-sm'}>{apkInfo?.summary}</div>
         <div
           className={'text-sm'}>{(apkInfo?.containsAds ? 'Chứa quảng cáo ' : '') + (apkInfo?.free ? 'Mua trong store ' : '')}</div>
@@ -48,7 +53,7 @@ export default function ApkInfo({apkInfo}) {
             3+
           </div>
           <div className={'inline-flex text-sm'}>
-            Rated for 3+
+            {apkInfo?.contentRating}
           </div>
         </div>
       </div>

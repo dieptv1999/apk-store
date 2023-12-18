@@ -5,6 +5,7 @@ import Image from "next/image";
 import {Icon} from "@iconify/react";
 import utils from "@/utils";
 import Link from "next/link";
+import useLocale from "@/hooks/useLocale";
 
 export default function FeaturedCard({
                                        className,
@@ -19,11 +20,12 @@ export default function FeaturedCard({
                                        genreId,
                                        appId
                                      }) {
+  const locale = useLocale();
   return (
-    <Link href={`/apps/${appId}`}>
-      <Card className={'flex flex-col space-y-3'} key={appId}>
+    <Link href={`/${locale}/apps/${appId}`} key={appId}>
+      <Card className={'flex flex-col space-y-3'}>
         <div className={'relative w-full aspect-video'}>
-          <Image src={headerImage} alt={'preview large image app'} fill className={'rounded-lg'}/>
+          <Image src={headerImage} alt={'preview large image app'} fill className={'rounded-lg'} quality={100} placeholder={'blur'} blurDataURL={'/blur_image.jpg'}/>
         </div>
         <div className={'inline-flex space-x-3'}>
           <Image src={icon} alt={'icon app'} width={64} height={64} quality={90} className={'rounded-lg'}/>
