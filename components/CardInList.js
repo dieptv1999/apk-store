@@ -9,8 +9,8 @@ import useLocale from "@/hooks/useLocale";
 export default function CardInList({className, index, icon, title, genreId, score, key, appId}) {
   const locale = useLocale();
   return (
-    <Link href={`/${locale}/apps/${appId}`}>
-      <Card className={className} key={key}>
+    <Link href={`/${locale}/apps/${appId}`} key={appId}>
+      <Card className={className}>
         <div className={'flex space-x-4 items-center'}>
           {index && <span>{index}</span>}
           <div>

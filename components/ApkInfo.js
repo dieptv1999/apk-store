@@ -9,7 +9,7 @@ export default function ApkInfo({apkInfo}) {
   const locale = useLocale()
   return <div className={'flex w-full my-4'}>
     <div className={'flex flex-col flex-1'}>
-      <div className={'text-5xl font-bold'}>{apkInfo?.title}</div>
+      <div className={'text-2xl md:text-5xl font-bold'}>{apkInfo?.title}</div>
       <div className={'flex flex-col my-6'}>
         <Link href={`/${locale}/developer?id=` + apkInfo?.developerId}>
           <div className={'font-semibold text-primary'}>{apkInfo?.developerId}</div>
@@ -19,9 +19,9 @@ export default function ApkInfo({apkInfo}) {
           className={'text-sm'}>{(apkInfo?.containsAds ? 'Chứa quảng cáo ' : '') + (apkInfo?.free ? 'Mua trong store ' : '')}</div>
       </div>
 
-      <div className={'flex'}>
+      <div className={'flex flex-col md:flex-row'}>
         {apkInfo?.icon ?
-          <div className={'mr-4'}>
+          <div className={'hidden md:block mr-4'}>
             <Image src={apkInfo?.icon} alt={'icon app'} width={48} height={48} className={'rounded-lg'}/>
           </div>
           : null}
@@ -58,11 +58,13 @@ export default function ApkInfo({apkInfo}) {
         </div>
       </div>
 
-      <div className={'flex space-x-5 my-6 items-center'}>
-        <button className="btn btn-success text-white font-bold px-16 flex items-center">
-          <Icon icon="solar:download-broken" color="white" fontSize={18}/>
-          <span className={'mt-1'}>Tải về APK</span>
-        </button>
+      <div className={'flex flex-col md:flex-row md:space-x-5 space-y-2 md:space-y-0 my-6 items-center'}>
+        <Link href={`/${locale}/apps/${apkInfo.appId}/download`}>
+          <button className="btn btn-success text-white font-bold px-16 flex items-center">
+            <Icon icon="solar:download-broken" color="white" fontSize={18}/>
+            <span className={'mt-1'}>Tải về APK</span>
+          </button>
+        </Link>
         <div>
           <ShareComponent/>
         </div>
@@ -73,7 +75,7 @@ export default function ApkInfo({apkInfo}) {
         <span>This app is available for all of your devices</span>
       </div>
     </div>
-    <div className={'flex-1 rounded-3xl overflow-hidden shadow-xl h-[250px] w-full relative'}>
+    <div className={'hidden md:block flex-1 rounded-3xl overflow-hidden shadow-xl h-[250px] w-full relative'}>
       <Image
         src={apkInfo?.headerImage}
         alt={'apk logo'}

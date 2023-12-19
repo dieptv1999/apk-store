@@ -21,7 +21,7 @@ export default function CardHorizontal({className, title, listApk}) {
     <div className={'text-black font-bold tracking-wide text-2xl'}>{title}</div>
     <Slider {...settings}>
       {listApk.map((apk) => (
-        <CardMedium {...apk} className={'h-full'}/>
+        <CardMedium {...apk} className={'h-full'} key={apk.appId}/>
       ))}
     </Slider>
   </div>

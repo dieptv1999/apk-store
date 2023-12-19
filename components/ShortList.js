@@ -16,7 +16,7 @@ export default function ShortList({listApk}) {
     <div className={'text-black font-bold tracking-wide text-2xl'}>{tabs[tab]}</div>
     <div className={'flex space-x-3'}>
       {tabs.map((e, index) => (
-        <Tag key={e} selected={tab === index} onClick={() => {
+        <Tag key={index + 'stag'} selected={tab === index} onClick={() => {
           setTab(index)
         }}>{e}</Tag>
       ))}
@@ -24,7 +24,7 @@ export default function ShortList({listApk}) {
     <div className="grid grid-cols-3 gap-2">
       {listApk
         ? listApk.map((apk, index) => (
-          <CardSmall {...apk} index={index + 1}/>
+          <CardSmall {...apk} index={index + 1} key={index}/>
         ))
         : null}
     </div>

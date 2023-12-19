@@ -72,7 +72,7 @@ export default function ApkMoreInfo({apkInfo}) {
 
   const desc = transformContent(!vsMore, apkInfo?.description ?? '', () => setVsMore(true))
 
-  return <div className={'flex w-full my-4 space-x-6'}>
+  return <div className={'flex flex-col md:flex-row w-full my-4 md:space-x-6 space-y-3 md:space-y-0'}>
     <div className={'flex flex-col flex-1'}>
       <div className={'relative'}>
         <div
@@ -127,7 +127,7 @@ export default function ApkMoreInfo({apkInfo}) {
         <ReviewList appId={apkInfo?.appId}/>
       </div>
     </div>
-    <div className={'flex flex-col w-[300px]'}>
+    <div className={'flex flex-col w-full md:w-[300px]'}>
       <Disclosure defaultOpen={true}>
         {({open}) => (
           <>
@@ -173,7 +173,7 @@ export default function ApkMoreInfo({apkInfo}) {
           </>
         )}
       </Disclosure>
-      <Disclosure defaultOpen={true}>
+      <Disclosure defaultOpen={true} key={'similar app'}>
         {({open}) => (
           <>
             <Disclosure.Button
@@ -185,7 +185,7 @@ export default function ApkMoreInfo({apkInfo}) {
               <div className={'flex flex-col space-y-2'}>
                 {similarApps && similarApps.length > 0
                   ? similarApps.map((apk, index) => (
-                    <CardInList {...apk} key={index} className={'p-2'}/>
+                    <CardInList {...apk} key={apk.appId} className={'p-2'}/>
                   ))
                   : <div className={'text-sm text-gray2 px-3'}>Không có ứng dụng tương tự nào</div>}
               </div>
@@ -194,7 +194,7 @@ export default function ApkMoreInfo({apkInfo}) {
         )}
       </Disclosure>
       {similarDevApps && similarDevApps.length > 0
-        ? <Disclosure defaultOpen={true}>
+        ? <Disclosure defaultOpen={true} key={'similar dev app'}>
           {({open}) => (
             <>
               <Disclosure.Button
@@ -206,7 +206,7 @@ export default function ApkMoreInfo({apkInfo}) {
                 <div className={'flex flex-col space-y-2'}>
 
                   {similarDevApps.map((apk, index) => (
-                    <CardInList {...apk} key={index} className={'p-2'}/>
+                    <CardInList {...apk} key={apk.appId} className={'p-2'}/>
                   ))
                   }
                 </div>

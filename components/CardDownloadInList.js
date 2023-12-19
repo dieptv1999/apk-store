@@ -6,7 +6,7 @@ import {Icon} from "@iconify/react";
 import Link from "next/link";
 import useLocale from "@/hooks/useLocale";
 
-export default function CardDownload({className, index, icon, title, genreId, score, appId, developerId, version}) {
+export default function CardDownloadInList({className, index, icon, title, genreId, score, appId, developerId, version, apkType}) {
   const locale = useLocale();
   return <Link href={`/${locale}/apps/${appId}`} className={className}>
     <Card>
@@ -21,12 +21,10 @@ export default function CardDownload({className, index, icon, title, genreId, sc
         <div className={'flex flex-col'}>
           <span className={'font-semibold'}>{title}</span>
           <span className={'text-sm text-gray2'}>{genreId}</span>
-          <span className={'text-sm text-gray2'}><span className={'tracking-wide font-semibold text-primary'}>{version}</span> by <span className={'tracking-wide font-semibold text-primary'}>{developerId}</span></span>
-          <span className={'text-sm text-gray2 inline-flex items-center space-x-1'}>
-          <span>{score?.toFixed(1)}</span>
-          <Icon icon="solar:star-bold"
-                color="#faad14"/>
-        </span>
+          <span className={'text-sm text-gray2'}>
+            <span className={'tracking-wide font-semibold text-primary'}>{version}</span> by <span className={'tracking-wide font-semibold text-primary'}>{developerId}</span>
+          </span>
+          <span className={'text-sm text-gray2'}>{apkType}</span>
         </div>
       </div>
     </Card>

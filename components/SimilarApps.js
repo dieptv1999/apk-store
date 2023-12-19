@@ -32,7 +32,7 @@ export default function SimilarApps({genreId, appId}) {
       <div className={'flex flex-col space-y-2'}>
         {similarApps && similarApps.length > 0
           ? similarApps.map((apk, index) => (
-            <CardInList {...apk} key={index} className={'p-2'}/>
+            <CardInList {...apk} key={apk.appId} className={'p-2'}/>
           ))
           : <div className={'text-sm text-gray2 px-3'}>Không có ứng dụng tương tự nào</div>}
       </div>

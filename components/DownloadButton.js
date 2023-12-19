@@ -12,7 +12,7 @@ const DownloadButton = memo(function ({link, fielname, versionId, className, sho
       <span>Downloading...</span>
     </div>
   )
-  return <Link href={link} download={fielname} className={`w-full ${className}`} onClick={() => setDownloading(true)} key={versionId}>
+  return <Link href={link} download={fielname} className={`${className}`} onClick={() => setDownloading(true)} key={versionId}>
     <button className={'btn btn-success text-white w-full'}>Download APK</button>
   </Link>
 })
