@@ -19,6 +19,9 @@ module.exports = {
       },
       backgroundColor: {
         'primary': '#01875f'
+      },
+      borderColor: {
+        'primary': '#01875f'
       }
     },
   },
