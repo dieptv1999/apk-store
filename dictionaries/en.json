@@ -6,5 +6,10 @@
   "home": {
     "hotGame": "Hot Games",
     "educational": "Educational"
+  },
+  "category": {
+    "latest": "Latest",
+    "mostDownloaded": "Most Downloaded",
+    "highestRated": "Highest Rated"
   }
 }

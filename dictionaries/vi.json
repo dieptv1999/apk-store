@@ -6,5 +6,10 @@
   "home": {
     "hotGame": "Trò chơi nổi bật",
     "educational": "Ứng dụng giáo dục"
+  },
+  "category": {
+    "latest": "Cập nhật mới nhất",
+    "mostDownloaded": "Tải nhiều nhất",
+    "highestRated": "Đánh giá tốt nhất"
   }
 }
