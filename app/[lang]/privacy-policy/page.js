@@ -11,40 +11,75 @@ export default async function AboutUs() {
       <div className={'max-w-screen-xl w-full px-[10px] flex flex-col space-y-6'}>
         <div className={'text-black font-bold tracking-wide text-3xl'}>Privacy & Policy</div>
         <div>
-          Effective as of May 25, 2018
+          Effective as of Dec 24, 2023
 
-          Our updated Privacy Policy explains what information we collect, how we use it, and how we protect it. We also
-          explain your rights regarding our use of your personal information, including how to manage your privacy and
-          cookies settings, access the information we have about you, and delete your account, under the privacy laws
-          including but not limited to California Consumer Privacy Act of 2018 (“CCPA”) and the General Data Protection
-          Regulation (GDPR).
+          At Apk Store, accessible from https://apkstore.com, one of our main priorities is the privacy of our visitors.
+          This Privacy Policy document contains types of information that is collected and recorded by apk store and how
+          we use it.
 
-          APKPure is committed to protecting consumer privacy online. We believe that greater protection of personal
-          privacy on the Web will not only protect our users, but also increase users confidence and ultimately their
-          participation in online activities. The purpose of our policy is to inform you about the types of information
-          we gather about you when you visit our site, how we may use that information, whether we disclose it to
-          anyone, and the rights you have regarding our use of the information. APKPure.com strives to offer its
-          visitors the many advantages of Internet technology and to provide an interactive and personalized experience.
+          If you have additional questions or require more information about our Privacy Policy, do not hesitate to
+          contact us.
         </div>
-        <div className={'text-black font-bold tracking-wide text-2xl'}>Your Consent</div>
+        <div className={'text-black font-bold tracking-wide text-2xl'}>Log Files</div>
         <div>
-          BY USING APKPure SERVICES, INSTALLING AND/OR RUNNING ON YOUR MOBILE DEVICE OR BROWSER, ENTERING INTO,
-          CONNECTING TO, ACCESSING AND/OR USING THE APP, YOU AGREE TO THE TERMS AND CONDITIONS SET FORTH IN THIS PRIVACY
-          POLICY, INCLUDING TO THE POSSIBLE COLLECTION AND PROCESSING OF YOUR PERSONAL INFORMATION. PLEASE NOTE: IF YOU
-          OR, AS APPLICABLE, YOUR LEGAL GUARDIAN, DISAGREE TO ANY TERM PROVIDED HEREIN, YOU MUST NOT INSTALL, ACCESS
-          AND/OR USE THE APP, APKPure OTHER SERVICES AND YOU ARE REQUESTED TO PROMPTLY ERASE THE APP FROM YOUR MOBILE
-          DEVICE OR STOP USING OUR APP/WEBSITE THROUGH YOUR BROWSER AND DO NOT ENTER TO, CONNECT TO, ACCESS OR USE ANY
-          OF OUR SERVICES RELATED TO THE APP.
+          Apk Store follows a standard procedure of using log files. These files log visitors when they visit websites.
+          All hosting companies do this and a part of hosting services' analytics. The information collected by log
+          files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time
+          stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that
+          is personally identifiable. The purpose of the information is for analyzing trends, administering the site,
+          tracking users' movement on the website, and gathering demographic information. Our Privacy Policy was created
+          with the help of the Privacy Policy Generator.
         </div>
-        <div className={'text-black font-bold tracking-wide text-2xl'}>Important Notice</div>
+        <div className={'text-black font-bold tracking-wide text-2xl'}>Google DoubleClick DART Cookie</div>
         <div>
-          APKPure.com is NOT associated or affiliated with Google, Google Play or Android in any way. Android is a
-          trademark of Google Inc. All the apps & games are property and trademark of their respective developer or
-          publisher and for HOME or PERSONAL use ONLY. Please be aware that APKPure.com ONLY SHARE THE ORIGINAL APK FILE
-          FOR FREE APPS. ALL THE APK FILE IS THE SAME AS IN GOOGLE PLAY WITHOUT ANY CHEAT, UNLIMITED GOLD PATCH OR ANY
-          OTHER MODIFICATIONS.
+          Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads
+          to our site visitors based upon their visit to www.website.com and other sites on the internet. However,
+          visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy
+          Policy at the following URL – https://policies.google.com/technologies/ads
         </div>
-        <div className={'text-black font-bold tracking-wide text-2xl'}>Follow APKPure on Social Media</div>
+        <div className={'text-black font-bold tracking-wide text-2xl'}>Our Advertising Partners</div>
+        <div>
+          Some of advertisers on our site may use cookies and web beacons. Our advertising partners are listed below.
+          Each of our advertising partners has their own Privacy Policy for their policies on user data. For easier
+          access, we hyperlinked to their Privacy Policies below.
+
+          Google
+
+          https://policies.google.com/technologies/ads
+        </div>
+        <div className={'text-black font-bold tracking-wide text-2xl'}>Privacy Policies</div>
+        <div>
+          You may consult this list to find the Privacy Policy for each of the advertising partners of apk store.
+
+          Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used
+          in their respective advertisements and links that appear on apk store, which are sent directly to users'
+          browser. They automatically receive your IP address when this occurs. These technologies are used to measure
+          the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on
+          websites that you visit.
+
+          Note that Apk store has no access to or control over these cookies that are used by third-party advertisers.
+        </div>
+        <div className={'text-black font-bold tracking-wide text-2xl'}>Third Party Privacy Policies</div>
+        <div>
+          Apk store's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to
+          consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may
+          include their practices and instructions about how to opt-out of certain options.
+
+          You can choose to disable cookies through your individual browser options. To know more detailed information
+          about cookie management with specific web browsers, it can be found at the browsers' respective websites. What
+          Are Cookies?
+        </div>
+        <div className={'text-black font-bold tracking-wide text-2xl'}>Online Privacy Policy Only</div>
+        <div>
+          This Privacy Policy applies only to our online activities and is valid for visitors to our website with
+          regards to the information that they shared and/or collect in apk store. This policy is not applicable to any
+          information collected offline or via channels other than this website.
+        </div>
+        <div className={'text-black font-bold tracking-wide text-2xl'}>Consent</div>
+        <div>
+          By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.
+        </div>
+        <div className={'text-black font-bold tracking-wide text-2xl'}>Follow APK Store on Social Media</div>
         <div className={'flex flex-col'}>
           <Link href={'#'} className={'text-primary underline'}>
             APKPure on Facebook
