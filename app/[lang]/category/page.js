@@ -47,7 +47,7 @@ export default async function Category({params: {lang}, searchParams}) {
         <div className={'w-full pt-4 md:pt-10'}>
           <InfiniteList slug={searchParams.id} dict={dict.category}/>
         </div>
-        <div className={'text-black font-bold tracking-wide text-lg pt-4 md:pt-10'}>Categorise</div>
+        <div className={'text-black font-bold tracking-wide text-lg pt-4 md:pt-10'}>{dict.apk.category}</div>
         <ListCategory />
       </div>
     </main>

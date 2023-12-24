@@ -5,6 +5,7 @@ import ShortList from "@/components/ShortList";
 import CardHorizontal from "@/components/CardHorizontal";
 import FeaturedCard from "@/components/FeaturedCard";
 import {getDictionary} from '@/app/dictionaries'
+import ListCategory from "@/components/ListCategory";
 
 export default async function Home({params: {lang}}) {
   const dict = await getDictionary(lang) // en
@@ -76,6 +77,8 @@ export default async function Home({params: {lang}}) {
       <div className={'max-w-screen-xl w-full px-[10px] flex flex-col space-y-4'}>
         <ShortList listApk={actionGames} dict={dict}/>
         <CardHorizontal title={dict?.home?.educational} listApk={educationApps}/>
+        <div className={'text-black font-bold tracking-wide text-lg pt-4 md:pt-10'}>{dict.apk.category}</div>
+        <ListCategory />
       </div>
     </main>
   )
