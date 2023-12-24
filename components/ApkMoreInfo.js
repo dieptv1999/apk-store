@@ -159,7 +159,7 @@ export default function ApkMoreInfo({apkInfo, dict}) {
                 ? <Link href={apkInfo?.developerWebsite} target={"_blank"}>
                   <div className={'mt-2 inline-flex space-x-2 items-center'}>
                     <Icon icon="fluent-mdl2:website" color="#5f6368"/>
-                    <span>Trang web</span>
+                    <span>{dict.apk.website}</span>
                   </div>
                 </Link>
                 : null}
@@ -169,7 +169,7 @@ export default function ApkMoreInfo({apkInfo, dict}) {
                   <div className={'mt-2 inline-flex space-x-2 items-center'}>
                     <Icon icon="eva:email-fill" color="#5f6368"/>
                     <div className={'mt-2 flex flex-col'}>
-                      <span>Email liên hệ hỗ trợ</span>
+                      <span>{dict.apk.emailSupport}</span>
                       <span className={'text-gray2 text-sm'}>{apkInfo?.developerEmail}</span>
                     </div>
                   </div>
@@ -181,7 +181,7 @@ export default function ApkMoreInfo({apkInfo, dict}) {
                   <div className={'mt-2 inline-flex space-x-2 items-center'}>
                     <Icon icon="mdi:address-marker" color="#5f6368" fontSize={26}/>
                     <div className={'mt-2 flex flex-col'}>
-                      <span>Địa chỉ</span>
+                      <span>{dict.apk.address}</span>
                       <span className={'text-gray2 text-sm'}>{apkInfo?.developerAddress}</span>
                     </div>
                   </div>

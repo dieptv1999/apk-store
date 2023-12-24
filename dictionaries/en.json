@@ -36,6 +36,9 @@
     "reviews": "Reviews",
     "appSupport": "App support",
     "similarApps": "Similar Apps",
-    "moreBy": "More by"
+    "moreBy": "More by",
+    "website": "Website",
+    "emailSupport": "Email support",
+    "address": "Developer address"
   }
 }
