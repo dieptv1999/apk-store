@@ -7,7 +7,8 @@ const nextConfig = {
         hostname: "**",
       },
     ],
-  }
+  },
+  trailingSlash: true
 }
 
 module.exports = nextConfig

@@ -1,15 +1,26 @@
 {
   "navbar": {
     "games": "Trò chơi",
-    "app": "Ứng dụng"
+    "app": "Ứng dụng",
+    "search": "Tìm kiếm APK"
   },
   "home": {
     "hotGame": "Trò chơi nổi bật",
-    "educational": "Ứng dụng giáo dục"
+    "hotApp": "Ứng dụng nổi bật",
+    "educational": "Ứng dụng giáo dục",
+    "communication": "Ứng dụng liên lạc",
+    "action": "Trò chơi Hành động",
+    "adventure": "Trò chơi phiêu lưu"
   },
   "category": {
     "latest": "Cập nhật mới nhất",
     "mostDownloaded": "Tải nhiều nhất",
-    "highestRated": "Đánh giá tốt nhất"
+    "highestRated": "Đánh giá tốt nhất",
+    "showMore": "Xem thêm"
+  },
+  "footer": {
+    "developer": "Nhà phát triển",
+    "company": "Công ty",
+    "service": "Dịch vụ"
   }
 }

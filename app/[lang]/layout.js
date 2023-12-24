@@ -23,7 +23,7 @@ export default async function RootLayout({children, params}) {
     <body className={quicksand.className}>
     <Navbar dict={dict}/>
     {children}
-    <Footer/>
+    <Footer dict={dict}/>
     </body>
     </html>
   )

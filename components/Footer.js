@@ -1,7 +1,7 @@
 'use client'
 import useLocale from "@/hooks/useLocale";
 
-export default function Footer() {
+export default function Footer({dict}) {
   const locale = useLocale()
 
   return (
@@ -16,29 +16,29 @@ export default function Footer() {
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Dịch vụ</h2>
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{dict.footer.service}</h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">Apk Store</a>
+                  <a href="/" className="hover:underline">Apk Store</a>
                 </li>
                 <li>
-                  <a href="https://tailwindcss.com/" className="hover:underline">Tailwind CSS</a>
+                  <a href="https://reviewcongty.blog/1" target={'_blank'} className="hover:underline">Review Company</a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Nhà phát triển</h2>
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{dict.footer.developer}</h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="https://github.com/dieptv1999" className="hover:underline ">Github</a>
+                  <a href="https://github.com/dieptv1999" target={'_blank'} className="hover:underline ">Github</a>
                 </li>
                 <li>
-                  <a href="https://github.com/dieptv1999" className="hover:underline">Discord</a>
+                  <a href="https://github.com/dieptv1999" target={'_blank'} className="hover:underline">Discord</a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Công ty</h2>
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{dict.footer.company}</h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
                   <a href={`/${locale}/privacy-policy`} className="hover:underline">Privacy Policy</a>

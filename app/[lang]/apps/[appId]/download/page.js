@@ -8,6 +8,8 @@ import DownloadButton from "@/components/DownloadButton";
 import CardInList from "@/components/CardInList";
 import SimilarApps from "@/components/SimilarApps";
 import CardDownloadInList from "@/components/CardDownloadInList";
+import PreviousVersionList from "@/components/PreviousVersionList";
+import {getDictionary} from "@/app/dictionaries";
 
 export async function generateMetadata(
   {params},
@@ -33,6 +35,7 @@ export async function generateMetadata(
 }
 
 export default async function ApkDetail({params}) {
+  const dict = await getDictionary(params.lang) // en
   const resApk = await fetch(
     BASE_URL + `/apk?appId=${params.appId}`,
     {
@@ -110,25 +113,7 @@ export default async function ApkDetail({params}) {
         />
         <Feed ads={resAds} delay={2000}/>
         <div className={'flex flex-col md:flex-row md:space-x-2'}>
-          <div className={'flex flex-col space-y-4 flex-1'}>
-            <div className={'text-black font-bold tracking-wide text-2xl mb-2'}>Các phiên bản cũ</div>
-            {resVersions.map(e => (
-              <div key={e.versionId} className={'flex justify-between items-center space-x-3'}>
-                <CardDownloadInList
-                  {...resApk}
-                  key={resApk.appId}
-                  {...e}
-                  className={'flex-1 w-full'}
-                />
-                <DownloadButton
-                  link={e?.downloadLink}
-                  fielname={params.appId + e.version}
-                  className={'w-auto'}
-                  showLoading={false}
-                />
-              </div>
-            ))}
-          </div>
+          <PreviousVersionList resVersions={resVersions} resApk={resApk} appId={params.appId} dict={dict}/>
           <div className={'w-[300px]'}>
             <SimilarApps appId={resApk?.appId} genreId={resApk.genreId}/>
           </div>

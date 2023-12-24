@@ -11,7 +11,7 @@ export default async function Home({params: {lang}}) {
   const resAds = await fetch(
     BASE_URL + `/apk/feed`,
     {
-      next: {revalidate: 180},
+      next: {revalidate: 4800},
       method: 'GET',
     },
   ).then(d => d.json());
@@ -19,13 +19,21 @@ export default async function Home({params: {lang}}) {
   const resFeatured = await fetch(
     BASE_URL + `/apk/featured`,
     {
-      next: {revalidate: 600},
+      next: {revalidate: 4800},
+      method: 'GET',
+    },
+  ).then(d => d.json());
+
+  const resAppFeatured = await fetch(
+    BASE_URL + `/apk/featured/education`,
+    {
+      next: {revalidate: 4800},
       method: 'GET',
     },
   ).then(d => d.json());
 
   const actionGames = await fetch(BASE_URL + "/apk/similar?page=0&size=9", {
-    next: {revalidate: 1200},
+    next: {revalidate: 4800},
     method: 'POST',
     body: JSON.stringify({
       genreId: 'Hành động',
@@ -33,7 +41,7 @@ export default async function Home({params: {lang}}) {
   }).then(d => d.json())
 
   const educationApps = await fetch(BASE_URL + "/apk/similar?page=0&size=9", {
-    next: {revalidate: 1200},
+    next: {revalidate: 4800},
     method: 'POST',
     body: JSON.stringify({
       genreId: 'Giáo dục',
@@ -56,7 +64,17 @@ export default async function Home({params: {lang}}) {
         <Feed ads={resAds} delay={2000}/>
       </Card>
       <div className={'max-w-screen-xl w-full px-[10px] flex flex-col space-y-4'}>
-        <ShortList listApk={actionGames}/>
+        <div className={'text-black font-bold tracking-wide text-2xl px-[10px]'}>{dict?.home?.hotApp}</div>
+        <div className="grid grid-cols-3 gap-4 w-full">
+          {resAppFeatured
+            ? resAppFeatured.splice(0, 3).map(e => (
+              <FeaturedCard {...e}/>
+            ))
+            : null}
+        </div>
+      </div>
+      <div className={'max-w-screen-xl w-full px-[10px] flex flex-col space-y-4'}>
+        <ShortList listApk={actionGames} dict={dict}/>
         <CardHorizontal title={dict?.home?.educational} listApk={educationApps}/>
       </div>
     </main>

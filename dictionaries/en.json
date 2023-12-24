@@ -1,15 +1,27 @@
 {
   "navbar": {
     "games": "Games",
-    "app": "App"
+    "app": "App",
+    "search": "Seach APK"
   },
   "home": {
     "hotGame": "Hot Games",
-    "educational": "Educational"
+    "hotApp": "Hot Apps",
+    "educational": "Educational",
+    "communication": "Communication",
+    "action": "Action Games",
+    "adventure": "Adventure",
+    "topGame": ""
   },
   "category": {
     "latest": "Latest",
     "mostDownloaded": "Most Downloaded",
-    "highestRated": "Highest Rated"
+    "highestRated": "Highest Rated",
+    "showMore": "Show More"
+  },
+  "footer": {
+    "developer": "Developer",
+    "company": "Company",
+    "service": "Services"
   }
 }

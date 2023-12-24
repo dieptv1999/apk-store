@@ -12,8 +12,11 @@ import utils, {transformContent} from "@/utils";
 import Link from "next/link";
 import axios from "axios";
 import {BASE_URL} from "@/utils/constant";
+import {remove} from "lodash/array";
+import useLocale from "@/hooks/useLocale";
 
 export default function ApkMoreInfo({apkInfo}) {
+  const locale = useLocale()
   const imgRef = useRef();
   const [imgIdx, setImgIdx] = useState(0);
   const [vsMore, setVsMore] = useState(false)
@@ -72,6 +75,8 @@ export default function ApkMoreInfo({apkInfo}) {
 
   const desc = transformContent(!vsMore, apkInfo?.description ?? '', () => setVsMore(true))
 
+  const listCategories = remove(apkInfo?.categories?.split(",") ?? [], o => !!o)
+
   return <div className={'flex flex-col md:flex-row w-full my-4 md:space-x-6 space-y-3 md:space-y-0'}>
     <div className={'flex flex-col flex-1'}>
       <div className={'relative'}>
@@ -119,6 +124,19 @@ export default function ApkMoreInfo({apkInfo}) {
         </div>
         <div className={'mt-6 mb-2 font-semibold'}>Lần cập nhật gần đây nhất</div>
         <div>{utils.formatDate(apkInfo?.updated)}</div>
+
+        <div className={'mt-6 mb-2 font-semibold'}>Danh mục</div>
+        <div className={'flex flex-wrap gap-2'}>
+          {
+            listCategories.map(e => (
+              <Link href={`/${locale}/category?id=${e}`} key={e}>
+                <div className={'border border-primary rounded px-3 pt-1.5 text-gray2 pb-1 cursor-pointer'}>
+                  {e}
+                </div>
+              </Link>
+            ))
+          }
+        </div>
       </div>
       <div className={'flex flex-col space-y-3 mt-4'}>
         <div className={'text-2xl font-bold inline-flex items-end space-x-3 mb-4'}>

@@ -6,6 +6,7 @@ import ShortList from "@/components/ShortList";
 import CardHorizontal from "@/components/CardHorizontal";
 import FeaturedCard from "@/components/FeaturedCard";
 import {getDictionary} from '@/app/dictionaries'
+import ListCategory from "@/components/ListCategory";
 
 export default async function Home({params: {lang}}) {
   const dict = await getDictionary(lang) // en
@@ -33,11 +34,19 @@ export default async function Home({params: {lang}}) {
     }),
   }).then(d => d.json())
 
-  const educationApps = await fetch(BASE_URL + "/apk/similar?page=0&size=9", {
-    next: {revalidate: 1200},
+  const actionApps = await fetch(BASE_URL + "/apk/similar?page=0&size=9", {
+    next: {revalidate: 2400},
     method: 'POST',
     body: JSON.stringify({
-      genreId: 'Giáo dục',
+      genreId: 'Hành động',
+    }),
+  }).then(d => d.json())
+
+  const adventureApps = await fetch(BASE_URL + "/apk/similar?page=0&size=9", {
+    next: {revalidate: 2400},
+    method: 'POST',
+    body: JSON.stringify({
+      genreId: 'Phiêu lưu',
     }),
   }).then(d => d.json())
 
@@ -57,8 +66,12 @@ export default async function Home({params: {lang}}) {
         <Feed ads={resAds} delay={2000}/>
       </Card>
       <div className={'max-w-screen-xl w-full px-[10px] flex flex-col space-y-4'}>
-        <ShortList listApk={actionGames}/>
-        <CardHorizontal title={dict?.home?.educational} listApk={educationApps}/>
+        <ShortList listApk={actionGames} dict={dict}/>
+        <CardHorizontal title={dict?.home?.action} listApk={actionApps}/>
+
+        <CardHorizontal title={dict?.home?.adventure} listApk={adventureApps}/>
+        <div className={'text-black font-bold tracking-wide text-lg pt-4 md:pt-10'}>Categorise</div>
+        <ListCategory />
       </div>
     </main>
   )

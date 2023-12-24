@@ -18,14 +18,15 @@ export default function FeaturedCard({
                                        icon,
                                        genre,
                                        genreId,
-                                       appId
+                                       appId,
                                      }) {
   const locale = useLocale();
   return (
     <Link href={`/${locale}/apps/${appId}`} key={appId}>
       <Card className={'flex flex-col space-y-3'}>
         <div className={'relative w-full aspect-video'}>
-          <Image src={headerImage} alt={'preview large image app'} fill className={'rounded-lg'} quality={100} placeholder={'blur'} blurDataURL={'/blur_image.jpg'}/>
+          <Image src={headerImage} alt={'preview large image app'} fill className={'rounded-lg'} quality={100}
+                 placeholder={'blur'} blurDataURL={'/blur_image.jpg'}/>
         </div>
         <div className={'inline-flex space-x-3'}>
           <Image src={icon} alt={'icon app'} width={64} height={64} quality={90} className={'rounded-lg'}/>
