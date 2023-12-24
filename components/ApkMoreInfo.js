@@ -15,7 +15,7 @@ import {BASE_URL} from "@/utils/constant";
 import {remove} from "lodash/array";
 import useLocale from "@/hooks/useLocale";
 
-export default function ApkMoreInfo({apkInfo}) {
+export default function ApkMoreInfo({apkInfo, dict}) {
   const locale = useLocale()
   const imgRef = useRef();
   const [imgIdx, setImgIdx] = useState(0);
@@ -109,7 +109,7 @@ export default function ApkMoreInfo({apkInfo}) {
       </div>
       <div className={'my-6'}>
         <div className={'text-2xl font-bold inline-flex items-end space-x-3 mb-4'}>
-          <span>Thông tin về ứng dụng này</span>
+          <span>{dict.apk.aboutThis}</span>
           <Icon icon="akar-icons:info-fill" className={'cursor-pointer'}/>
         </div>
 
@@ -119,13 +119,13 @@ export default function ApkMoreInfo({apkInfo}) {
           ))}
           {!vsMore ?
             <span className={'cursor-pointer underline text-blue-500 hover:text-blute-700'}
-                  onClick={() => setVsMore(true)}>Xem thêm</span>
+                  onClick={() => setVsMore(true)}>{dict.category.showMore}</span>
             : null}
         </div>
-        <div className={'mt-6 mb-2 font-semibold'}>Lần cập nhật gần đây nhất</div>
-        <div>{utils.formatDate(apkInfo?.updated)}</div>
+        <div className={'mt-6 mb-2 font-semibold'}>{dict.apk?.lastModified}</div>
+        <div>{utils.formatDate(apkInfo?.updated, locale)}</div>
 
-        <div className={'mt-6 mb-2 font-semibold'}>Danh mục</div>
+        <div className={'mt-6 mb-2 font-semibold'}>{dict.apk.category}</div>
         <div className={'flex flex-wrap gap-2'}>
           {
             listCategories.map(e => (
@@ -140,7 +140,7 @@ export default function ApkMoreInfo({apkInfo}) {
       </div>
       <div className={'flex flex-col space-y-3 mt-4'}>
         <div className={'text-2xl font-bold inline-flex items-end space-x-3 mb-4'}>
-          Đánh giá của người dùng
+          {dict.apk.reviews}
         </div>
         <ReviewList appId={apkInfo?.appId}/>
       </div>
@@ -151,7 +151,7 @@ export default function ApkMoreInfo({apkInfo}) {
           <>
             <Disclosure.Button
               className="mb-2 flex w-full justify-between items-center rounded-lg bg-blue-100 px-4 py-2 text-left text-lg font-semibold text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500/75">
-              <span>Thông tin hỗ trợ của ứng dụng</span>
+              <span>{dict.apk.appSupport}</span>
               <Icon icon="fluent:chevron-up-12-filled"/>
             </Disclosure.Button>
             <Disclosure.Panel className="px-4 pb-2 text-lg font-medium flex flex-col">
@@ -196,7 +196,7 @@ export default function ApkMoreInfo({apkInfo}) {
           <>
             <Disclosure.Button
               className="mb-2 flex w-full justify-between items-center rounded-lg bg-blue-100 px-4 py-2 text-left text-lg font-semibold text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500/75">
-              <span>Các ứng dụng tương tự</span>
+              <span>{dict.apk.similarApps}</span>
               <Icon icon="fluent:chevron-up-12-filled"/>
             </Disclosure.Button>
             <Disclosure.Panel className="pb-2 pt-4 text-lg font-medium">
@@ -217,7 +217,7 @@ export default function ApkMoreInfo({apkInfo}) {
             <>
               <Disclosure.Button
                 className="mb-2 flex w-full justify-between items-center rounded-lg bg-blue-100 px-4 py-2 text-left text-lg font-semibold text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500/75">
-                <span>Các mục khác của {apkInfo?.developerId}</span>
+                <span>{dict.apk.moreBy} {apkInfo?.developerId}</span>
                 <Icon icon="fluent:chevron-up-12-filled"/>
               </Disclosure.Button>
               <Disclosure.Panel className="pb-2 pt-4 text-lg font-medium">

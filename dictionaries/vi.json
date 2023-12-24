@@ -2,7 +2,9 @@
   "navbar": {
     "games": "Trò chơi",
     "app": "Ứng dụng",
-    "search": "Tìm kiếm APK"
+    "search": "Tìm kiếm APK",
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất"
   },
   "home": {
     "hotGame": "Trò chơi nổi bật",
@@ -21,6 +23,18 @@
   "footer": {
     "developer": "Nhà phát triển",
     "company": "Công ty",
-    "service": "Dịch vụ"
+    "service": "Dịch vụ",
+    "aboutUs": "Về chúng tôi",
+    "privacyPolicy": "Chính sách bảo mật",
+    "terms": "Điều khoản sử dụng"
+  },
+  "apk": {
+    "lastModified": "Lần cập nhật gần đây nhất",
+    "aboutThis": "Thông tin về ứng dụng này",
+    "category": "Danh mục",
+    "reviews": "Đánh giá của người dùng",
+    "appSupport": "Thông tin hỗ trợ của ứng dụng",
+    "similarApps": "Ứng dụng tương tự",
+    "moreBy": "Các mục khác của"
   }
 }

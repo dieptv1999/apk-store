@@ -1,15 +1,17 @@
 'use client'
 import {formatDistance} from "date-fns/fp";
-import {vi} from 'date-fns/locale'
+import {vi, enUS} from 'date-fns/locale'
 import {format} from "date-fns";
 
 export const dateDistance = (fromDate) => {
   return formatDistance(fromDate, new Date(), {addSuffix: true, locale: vi})
 }
 
-export const formatDate = (d) => {
+export const formatDate = (d, locale = 'vi') => {
   if (!d) return ''
-  return format(new Date(d), 'dd MMMM yyyy', { locale: vi })
+  let l = vi
+  if (locale === 'en') l = enUS
+  return format(new Date(d), 'dd MMMM yyyy', { locale: l })
 }
 
 

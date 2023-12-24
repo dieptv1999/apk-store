@@ -142,7 +142,7 @@ export default function Navbar({dict}) {
                   signOut()
                 }}>
                   <Icon icon="line-md:logout" fontSize={20}/>
-                  <span className={'text-gray2 font-semibold'}>Logout</span>
+                  <span className={'text-gray2 font-semibold'}>{dict.navbar.logout}</span>
                 </div>
               </Menu.Items>
             </Transition>
@@ -151,7 +151,7 @@ export default function Navbar({dict}) {
         : <Link href={`/${locale}/login`}>
           <div className={'inline-flex items-center space-x-2 cursor-pointer'}>
             <Icon icon="line-md:login" fontSize={20}/>
-            <span className={'text-gray2 font-semibold'}>Login</span>
+            <span className={'text-gray2 font-semibold'}>{dict.navbar.login}</span>
           </div>
         </Link>
       }

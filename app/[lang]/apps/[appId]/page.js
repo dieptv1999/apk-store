@@ -6,6 +6,7 @@ import ShortList from "@/components/ShortList";
 import CardHorizontal from "@/components/CardHorizontal";
 import ApkInfo from "@/components/ApkInfo";
 import ApkMoreInfo from "@/components/ApkMoreInfo";
+import {getDictionary} from "@/app/dictionaries";
 
 export async function generateMetadata(
   { params},
@@ -31,6 +32,7 @@ export async function generateMetadata(
 }
 
 export default async function ApkDetail({params}) {
+  const dict = await getDictionary(params.lang)
   const res = await fetch(
     BASE_URL + `/apk?appId=${params.appId}`,
     {
@@ -52,7 +54,7 @@ export default async function ApkDetail({params}) {
       <div className={'max-w-screen-xl w-full px-[10px] flex flex-col space-y-4'}>
         <ApkInfo apkInfo={res}/>
         <Feed ads={resAds} delay={2000}/>
-        <ApkMoreInfo apkInfo={res}/>
+        <ApkMoreInfo apkInfo={res} dict={dict}/>
       </div>
     </main>
   )

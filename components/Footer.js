@@ -41,10 +41,13 @@ export default function Footer({dict}) {
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{dict.footer.company}</h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href={`/${locale}/privacy-policy`} className="hover:underline">Privacy Policy</a>
+                  <a href={`/${locale}/about-us`} className="hover:underline">{dict.footer.aboutUs}</a>
+                </li>
+                <li className="mb-4">
+                  <a href={`/${locale}/privacy-policy`} className="hover:underline">{dict.footer.privacyPolicy}</a>
                 </li>
                 <li>
-                  <a href={`/${locale}/terms`} className="hover:underline">Terms &amp; Conditions</a>
+                  <a href={`/${locale}/terms`} className="hover:underline">{dict.footer.terms}</a>
                 </li>
               </ul>
             </div>

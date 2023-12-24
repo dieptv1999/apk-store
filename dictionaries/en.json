@@ -2,7 +2,9 @@
   "navbar": {
     "games": "Games",
     "app": "App",
-    "search": "Seach APK"
+    "search": "Seach APK",
+    "login": "Login",
+    "logout": "Logout"
   },
   "home": {
     "hotGame": "Hot Games",
@@ -22,6 +24,18 @@
   "footer": {
     "developer": "Developer",
     "company": "Company",
-    "service": "Services"
+    "service": "Services",
+    "aboutUs": "About us",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms & Conditions"
+  },
+  "apk": {
+    "lastModified": "Updated at",
+    "aboutThis": "About this app",
+    "category": "Categories",
+    "reviews": "Reviews",
+    "appSupport": "App support",
+    "similarApps": "Similar Apps",
+    "moreBy": "More by"
   }
 }
