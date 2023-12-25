@@ -4,8 +4,9 @@ import {useCallback, useEffect, useState} from "react";
 import axios from "axios";
 import {BASE_URL} from "@/utils/constant";
 import CardInList from "@/components/CardInList";
+import Ads from "@/components/Ads";
 
-export default function SimilarApps({genreId, appId}) {
+export default function SimilarApps({genreId, appId, ads}) {
   const [similarApps, setSimilarApps] = useState([]);
 
   const fetchSimilarApp = useCallback(async () => {
@@ -29,6 +30,7 @@ export default function SimilarApps({genreId, appId}) {
   return (
     <div>
       <span className={'text-black font-bold tracking-wide text-xl mb-2'}>Các ứng dụng tương tự</span>
+      <Ads ads={ads} delay={2000}/>
       <div className={'flex flex-col space-y-2'}>
         {similarApps && similarApps.length > 0
           ? similarApps.map((apk, index) => (

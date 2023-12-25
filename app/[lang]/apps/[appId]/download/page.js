@@ -64,8 +64,16 @@ export default async function ApkDetail({params}) {
 
   const latestVersion = resVersions[0];
 
-  const resAds = await fetch(
+  const resFeed = await fetch(
     BASE_URL + `/apk/feed`,
+    {
+      next: {revalidate: 180},
+      method: 'GET',
+    },
+  ).then(d => d.json());
+
+  const resAds = await fetch(
+    BASE_URL + `/apk/ads`,
     {
       next: {revalidate: 180},
       method: 'GET',
@@ -111,11 +119,11 @@ export default async function ApkDetail({params}) {
           fielname={params.appId + latestVersion.version}
           versionId={latestVersion.versionId}
         />
-        <Feed ads={resAds} delay={2000}/>
+        <Feed ads={resFeed} delay={2000}/>
         <div className={'flex flex-col md:flex-row md:space-x-2'}>
           <PreviousVersionList resVersions={resVersions} resApk={resApk} appId={params.appId} dict={dict}/>
           <div className={'w-[300px]'}>
-            <SimilarApps appId={resApk?.appId} genreId={resApk.genreId}/>
+            <SimilarApps appId={resApk?.appId} genreId={resApk.genreId} ads={resAds}/>
           </div>
         </div>
       </div>

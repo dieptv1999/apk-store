@@ -74,7 +74,7 @@ export default function Ads({ads, delay = 100}) {
               axios.get(BASE_URL + '/apk/click-ads?id=' + activate.id)
             }}>
               <img src={activate.cover}
-                   className="w-full object-cover h-[160px]"
+                   className="w-full object-cover rounded-lg h-[160px]"
                    alt={'carousel ads'}/>
             </Link>
           </motion.div>
