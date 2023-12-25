@@ -6,6 +6,7 @@ import CardHorizontal from "@/components/CardHorizontal";
 import FeaturedCard from "@/components/FeaturedCard";
 import {getDictionary} from '@/app/dictionaries'
 import ListCategory from "@/components/ListCategory";
+import Link from "next/link";
 
 export default async function Home({params: {lang}}) {
   const dict = await getDictionary(lang) // en
@@ -78,7 +79,13 @@ export default async function Home({params: {lang}}) {
         <ShortList listApk={actionGames} dict={dict}/>
         <CardHorizontal title={dict?.home?.educational} listApk={educationApps}/>
         <div className={'text-black font-bold tracking-wide text-lg pt-4 md:pt-10'}>{dict.apk.category}</div>
-        <ListCategory />
+        <ListCategory/>
+
+        <div className={'py-16 text-xl'}>
+          <Link href={`/${lang}/faq/how-to-install`} className={'text-primary font-semibold underline '}>
+            How to install XApk, Apks, OBB?
+          </Link>
+        </div>
       </div>
     </main>
   )
