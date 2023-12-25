@@ -178,16 +178,16 @@ export default async function AboutUs() {
           <p>As long as the website and the information and services on the website are provided free of charge, we will
             not be liable for any loss or damage of any nature.</p>
         </div>
-        <div className={'text-black font-bold tracking-wide text-2xl'}>Follow APKPure on Social Media</div>
+        <div className={'text-black font-bold tracking-wide text-2xl'}>Follow Apk Store on Social Media</div>
         <div className={'flex flex-col'}>
           <Link href={'#'} className={'text-primary underline'}>
-            APKPure on Facebook
+            Apk Store on Facebook
           </Link>
           <Link href={'#'} className={'text-primary underline'}>
-            APKPure on Twitter
+            Apk Store on X
           </Link>
           <Link href={'#'} className={'text-primary underline'}>
-            APKPure on YouTube
+            Apk Store on YouTube
           </Link>
         </div>
       </div>

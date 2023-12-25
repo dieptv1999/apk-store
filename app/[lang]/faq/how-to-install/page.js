@@ -40,13 +40,13 @@ export default function HowToInstall() {
         <div className={'text-black font-bold tracking-wide text-2xl'}>Follow APK Store on Social Media</div>
         <div className={'flex flex-col'}>
           <Link href={'#'} className={'text-primary underline'}>
-            APKPure on Facebook
+            Apk Store on Facebook
           </Link>
           <Link href={'#'} className={'text-primary underline'}>
-            APKPure on Twitter
+            Apk Store on X
           </Link>
           <Link href={'#'} className={'text-primary underline'}>
-            APKPure on YouTube
+            Apk Store on YouTube
           </Link>
         </div>
       </div>
